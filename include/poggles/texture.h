@@ -12,7 +12,6 @@
 
 namespace poggles
 {
-
 class POGGLES_EXPORT texture
 {
 public:
