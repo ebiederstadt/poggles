@@ -15,7 +15,7 @@ namespace poggles
 class POGGLES_EXPORT texture
 {
 public:
-  explicit texture(GLenum _target);
+  explicit texture(GLenum in_target);
 
   explicit operator GLuint() const;
 

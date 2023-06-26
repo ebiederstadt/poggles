@@ -94,8 +94,8 @@ auto poggles::loadFromData(poggles::texture& tex,
                 // should be false on a glError
 }
 
-poggles::texture::texture(GLenum _target)
-    : target(_target)
+poggles::texture::texture(GLenum in_target)
+    : target(in_target)
 {
   bind();
 }
