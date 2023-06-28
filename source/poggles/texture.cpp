@@ -45,10 +45,10 @@ auto poggles::loadFromData(poggles::texture& tex,
                            std::optional<GLenum> target,
                            GLint level) -> bool
 {
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  glTexParameteri(tex.target, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(tex.target, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  glTexParameteri(tex.target, GL_TEXTURE_WRAP_S, GL_REPEAT);
+  glTexParameteri(tex.target, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
   GLenum format = GL_RGB;
   if (channels == 1) {
