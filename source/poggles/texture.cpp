@@ -45,6 +45,10 @@ auto poggles::loadFromData(poggles::texture& tex,
                            std::optional<GLenum> target,
                            GLint level) -> bool
 {
+  if (target.has_value()) {
+    tex.target = *target;
+  }
+
   glTexParameteri(tex.target, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
   glTexParameteri(tex.target, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
   glTexParameteri(tex.target, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -59,10 +63,6 @@ auto poggles::loadFromData(poggles::texture& tex,
     format = GL_RGB;
   } else if (channels == 4) {
     format = GL_RGBA;
-  }
-
-  if (target.has_value()) {
-    tex.target = *target;
   }
 
   std::visit(overload {[&](float* pixelData)
